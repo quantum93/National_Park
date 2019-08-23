@@ -6,7 +6,6 @@ class ParksController < ApplicationController
       @parks = Park.all
     else
       state = State.search(params[:state])
-      byebug
       if state[0]
         @parks = Park.where(state_id: state[0].id)
       else

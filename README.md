@@ -85,9 +85,8 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 | Add foreign Key in parks table                                 | rails g migration add_foreign_key_for_parks             |
 | database seed with custom seeding                              | rake db:seed                                            |
 | Backup of database                                             | pg_dump National_Park_development > database_backup.sql |
-
-
-
+| Creating endpoints for tables in DB (check with POSTMAN)       | rake routes                                             |
+| Scopes for the highest and the least number of park in states  |                                                         |
 
 
 Endpoints for GET (all and by id), POST, PUT and DELETE.

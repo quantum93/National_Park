@@ -25,6 +25,12 @@ class StatesController < ApplicationController
     @state.destroy
   end
 
+  # These two functions are for scope
+    def most_state
+      @most_parks = State.most_parks
+      json_response(@most_parks)
+    end
+
   private
   def json_response(object)
     render json: object, status: :ok
