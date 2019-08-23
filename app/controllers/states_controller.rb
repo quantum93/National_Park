@@ -1,7 +1,7 @@
 class StatesController < ApplicationController
 
   def index
-    @states = "Oregon"
+    @states = State.pluck("state_name")
     json_response(@states)
   end
 
