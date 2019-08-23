@@ -75,7 +75,18 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 | -------------------------------------------------------------: | -----------------------: | ---------------------------: |
 | Create API Files and directories                               | rails new app_name --api -d postgresql -T               |
 | Bundling gems for this app                                     | bundle install                                          |
-|
+| Setting up Rspec                                               | bundle exec rails generate rspec:install                |
+| Add database                                                   | rake db:create                                          |
+| Add State table in DB                                          | rails g migration add_states_table                      |
+|                                                                | rake db:migrate                                         |
+| Mirror the changes in our test database.                       | rake db:test:prepare                                    |
+
+
+| Add Park table in DB                                           | rails g migration add_parks_table                       |
+|                                                                | rake db:migrate                                         |
+| Add foreign Key in parks table                                 | rails g migration add_foreign_key_for_parks             |
+
+
 
 Endpoints for GET (all and by id), POST, PUT and DELETE.
 A RANDOM endpoint that randomly returns a park/business/animal.
