@@ -8,6 +8,6 @@
 State.destroy_all
 
 50.times do |index|
-  State.create!(state_name: Faker::Address.name)
+  State.create!(state_name: Faker::Address.state)
   end
 p "Created #{State.count} state names."
