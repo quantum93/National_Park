@@ -7,12 +7,13 @@ class V1::StatesController < ApplicationController
 
   def show
     @state = State.find(params[:id].to_str)
-    json_response(@state)
+    @parks = Park.where(state_id: @state["id"])
+    json_response([@state, @parks])
   end
 
   def create
     @state = State.create!(state_params)
-    json_response(@state, :created)
+    json_response(@state)
   end
 
   def update
