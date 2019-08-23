@@ -1,10 +1,7 @@
-# README
-
-Parks Lookup: Create an API for state and national parks. The API will list state and national parks.
-
 # _National Park Application_
 
 #### _Project for Week 12 at the coding school, Epicodus, written on August 23, 2019._
+_Parks Lookup: Create an API for state and national parks. The API will list state and national parks._
 
 #### By _**Tae Lee**_
 
@@ -86,7 +83,7 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 * for faker practice, use the faker information on https://www.rubydoc.info/gems/faker/1.6.6#fakervehicle site for test.
 
 ## Specs
-| -------------------------------------------------------------- |:------------------------:| ----------------------------:|
+| ------------------------------------------------------------------------------------------------------------------------:|
 | Behavior                                                       | Input                    | Output                       |
 | -------------------------------------------------------------- |:------------------------:| ----------------------------:|
 | Create API Files and directories                               | rails new app_name --api -d postgresql -T               |
