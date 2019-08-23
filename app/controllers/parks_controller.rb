@@ -1,7 +1,18 @@
 class ParksController < ApplicationController
 
   def index
-    @parks = Park.all
+    state_name = params[:state]
+    if state_name == nil
+      @parks = Park.all
+    else
+      state = State.search(params[:state])
+      byebug
+      if state[0]
+        @parks = Park.where(state_id: state[0].id)
+      else
+        @parks = []
+      end
+    end
     json_response(@parks)
   end
 
@@ -11,9 +22,8 @@ class ParksController < ApplicationController
   end
 
   def create
-    state_id = Country.search(params[:state])
     @park = Park.create(park_params)
-    @park.state_id = state_id
+    # @park.state_id = state_id
     json_response(@park)
   end
 
