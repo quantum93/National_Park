@@ -30,6 +30,7 @@ class ParksController < ApplicationController
   def update
     @park = Park.find(params[:id])
     @park.update(park_params)
+    json_response(@park)
   end
 
   def destroy
