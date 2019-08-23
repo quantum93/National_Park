@@ -80,11 +80,10 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 | Add State table in DB                                          | rails g migration add_states_table                      |
 |                                                                | rake db:migrate                                         |
 | Mirror the changes in our test database.                       | rake db:test:prepare                                    |
-
-
 | Add Park table in DB                                           | rails g migration add_parks_table                       |
 |                                                                | rake db:migrate                                         |
 | Add foreign Key in parks table                                 | rails g migration add_foreign_key_for_parks             |
+
 
 
 
