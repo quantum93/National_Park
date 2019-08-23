@@ -85,8 +85,10 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 * Postgres DB 11.1
 * for faker practice, use the faker information on https://www.rubydoc.info/gems/faker/1.6.6#fakervehicle site for test.
 
-## Spec
-| :------------------------------------------------------------- | :----------------------- | :--------------------------- |
+## Specs
+| -------------------------------------------------------------- |:------------------------:| ----------------------------:|
+| Behavior                                                       | Input                    | Output                       |
+| -------------------------------------------------------------- |:------------------------:| ----------------------------:|
 | Create API Files and directories                               | rails new app_name --api -d postgresql -T               |
 | Bundling gems for this app                                     | bundle install                                          |
 | Setting up Rspec                                               | bundle exec rails generate rspec:install                |
@@ -106,7 +108,7 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 | Create custom endpoint that accepts parameters (SEARCH route for state) |                                                |
 | Create exception handling for create and update of state table |                                                         |
 | Perform request spec test for API with FactoryBot              |                                                         |
-| :------------------------------------------------------------- | :----------------------- | :--------------------------- |
+| -------------------------------------------------------------- |:------------------------:| ----------------------------:|
 
 ## License
 _This software is licensed under MIT license._
