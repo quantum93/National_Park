@@ -9,11 +9,11 @@ Parks Lookup: Create an API for state and national parks. The API will list stat
 #### By _**Tae Lee**_
 
 # Description
-_A website for (fictional) world travel information created using Ruby on Rails.
-In particular, this website informed about the countries in the world from traveler. Each traveler gives rating by their experience and written comments. You can visit the random country site within this website. In order to use this website, you need two git repos (world_travel_backend and world_travel_interface). The backend logic was tested with the integration test spec for API call._
+_This application successfully returns responses for API calls for national park list of 50 states of USA.
+It has only backend logic for API and ready to do with front-end interface._
 
 # Database
-_The site should have functionality to review countries but your database should have built-in list of countries (check deployment instructions). All reviews should have an author, comments and rating. (A rating can be a number between 1 and 10.) You can include other fields of your choosing as well. For initialization, we executed "rails new app_name --api -d postgresql -T"_
+_The site should have functionality to list states. All state has id and state name and all national park has id, state_id and park name. The state and national park is using the one-to-many relationship with foreign key in DB schema. You can include other columns of your choosing as well. For initialization, we executed "rails new National_Park --api -d postgresql -T"_
 
 # Scopes
 _This site should use scopes to display the following information on the site:_
@@ -21,30 +21,47 @@ _The state with the largest number of national parks._
 _A suggestion of state to visit by random selection_
 
 # Seeding
-_This project should include seed data for 50 states with their national parks. Use custom seed feature to seed the database._
+_This project should include seed data for 50 states with their national parks.
+We use custom seed feature to seed the database._
 
-* API Versioning instructions
+# route of API
+        Prefix    Verb     URI Pattern                   Controller#Action             parameters
+       v1_parks   GET     /v1/parks(.:format)             v1/parks#index
+                  POST    /v1/parks(.:format)             v1/parks#create
+        v1_park   GET     /v1/parks/:id(.:format)         v1/parks#show
+                  PATCH   /v1/parks/:id(.:format)         v1/parks#update
+                  PUT     /v1/parks/:id(.:format)         v1/parks#update
+                  DELETE  /v1/parks/:id(.:format)         v1/parks#destroy
+      v1_states   GET     /v1/states(.:format)            v1/states#index
+                  POST    /v1/states(.:format)            v1/states#create
+       v1_state   GET     /v1/states/:id(.:format)        v1/states#show
+                  PATCH   /v1/states/:id(.:format)        v1/states#update
+                  PUT     /v1/states/:id(.:format)        v1/states#update
+                  DELETE  /v1/states/:id(.:format)        v1/states#destroy
+  v1_most_parks   GET     /v1/most_parks(.:format)        v1/states#most_state
+v1_random_place   GET     /v1/random_place(.:format)      v1/states#suprising_state
+      v1_search   GET     /v1/search(.:format)            v1/states#search             state_name
+
+# API Versioning instructions
 https://chriskottom.com/blog/2017/04/versioning-a-rails-api/
 _URL segment: a version slug in the resource identifier, e.g. /v1/users/100_
 
 ## Setup/Installation Requirements
-* _Open terminal and type 'git clone https://github.com/quantum93/world_travel_interface.git'_
-* _Open terminal and type 'git clone https://github.com/quantum93/world_travel_backend.git'_
-* _Navigate to each project directory using cd in terminal_
+* _postgres DB installation for this project
+  (if your Postgres DB is not starting at login,
+  please execute "pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start" on terminal._
+* _Open terminal and type 'git clone https://github.com/quantum93/National_Park.git'_
+* _Navigate to the project directory using cd in terminal_
 * _Open project in text editor (atom .)_
 * _Type 'bundle install' in terminal to load Gems
 * _rake db:create_
 * _rake db:migrate_
-* _For API service back-end, execute rails server with port number 3001 in same machine with interface._
-* _rails s -p 3001_
-* _For interface, execute rails server with port number 3000 in same machine with interface._
 * _rails s_
 * _rake db:seed_
-* _rails server -p 3001 (For API server back-end,)_
-* _rails server 3000 (For userinterface side,)_
+* _rails server_
 * _open http://localhost:3000 in a web browser_
-* _To run tests, type 'rspec' in terminal_
-* _postgres DB installation with sql script in project (if your Postgres DB is not starting at login, please execute "pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start" on terminal._
+* _To run request tests, type 'rspec' in terminal_
+
 * _for database backup, please execute followings in terminal,_
 * _pg_dump [YOUR DATABASE NAME] > database_backup.sql_
 * _for database restore after clone, please execute followings in terminal_
@@ -69,7 +86,7 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 * for faker practice, use the faker information on https://www.rubydoc.info/gems/faker/1.6.6#fakervehicle site for test.
 
 ## Spec
-| :-------------------------------------------------------------: | :-----------------------: | :---------------------------: |
+| :------------------------------------------------------------- | :----------------------- | :--------------------------- |
 | Create API Files and directories                               | rails new app_name --api -d postgresql -T               |
 | Bundling gems for this app                                     | bundle install                                          |
 | Setting up Rspec                                               | bundle exec rails generate rspec:install                |
@@ -88,10 +105,8 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 | Create versioning feature for API                              |                                                         |
 | Create custom endpoint that accepts parameters (SEARCH route for state) |                                                |
 | Create exception handling for create and update of state table |                                                         |
-|
-
-Complete testing with request specs.
-A README that thoroughly documents all endpoints, including parameters that can be passed in.
+| Perform request spec test for API with FactoryBot              |                                                         |
+| :------------------------------------------------------------- | :----------------------- | :--------------------------- |
 
 ## License
 _This software is licensed under MIT license._
