@@ -1,4 +1,4 @@
-class ParksController < ApplicationController
+class V1::ParksController < ApplicationController
 
   def index
     state_name = params[:state]

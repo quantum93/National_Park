@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :parks
-  resources :states
-  # This is custom route for scope
-  get 'most_parks', :to => 'states#most_state'
-  get 'random_place', :to => 'states#suprising_state'
+  concern :api_base do
+    resources :parks
+    resources :states
+    # This is custom route for scope
+    get 'most_parks', :to => 'states#most_state'
+    get 'random_place', :to => 'states#suprising_state'
+  end
+
+  namespace :v1 do
+    concerns :api_base
+  end
 end
