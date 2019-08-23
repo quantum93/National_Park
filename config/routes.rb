@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :parks
-  resources :states
+  # resources :states
   # This is custom route for scope
   get 'most_parks', :to => 'states#most_state'
+  get 'random_place', :to => 'states#suprising_state'
 end

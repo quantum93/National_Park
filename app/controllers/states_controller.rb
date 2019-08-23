@@ -25,11 +25,18 @@ class StatesController < ApplicationController
     @state.destroy
   end
 
-  # These two functions are for scope
-    def most_state
-      @most_parks = State.most_parks
-      json_response(@most_parks)
-    end
+  # This function is for the scope feature
+  def most_state
+    @most_parks = State.most_parks
+    json_response(@most_parks)
+  end
+
+  # This is for the random selection of state
+  def suprising_state
+    @random_place = State.random_place
+    @parks = Park.where(state_id: @random_place[0].id)
+    json_response([@random_place, @parks])
+  end
 
   private
   def json_response(object)

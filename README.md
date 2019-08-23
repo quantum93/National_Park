@@ -86,7 +86,9 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 | database seed with custom seeding                              | rake db:seed                                            |
 | Backup of database                                             | pg_dump National_Park_development > database_backup.sql |
 | Creating endpoints for tables in DB (check with POSTMAN)       | rake routes                                             |
-| Scopes for the highest and the least number of park in states  |                                                         |
+| Scope for the highest number of park in states                 |                                                         |
+| Scope for the random state display                             |                                                         |
+
 
 
 Endpoints for GET (all and by id), POST, PUT and DELETE.

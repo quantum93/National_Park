@@ -10,4 +10,10 @@ class State < ApplicationRecord
   # .limit(1)
   )}
 
+  scope :random_place, -> {(
+    select("states.id, states.state_name")
+    .order("random()")
+    .limit(1)
+    )}
+
 end
