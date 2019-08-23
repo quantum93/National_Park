@@ -84,6 +84,7 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 |                                                                | rake db:migrate                                         |
 | Add foreign Key in parks table                                 | rails g migration add_foreign_key_for_parks             |
 | database seed with custom seeding                              | rake db:seed                                            |
+| Backup of database                                             | pg_dump National_Park_development > database_backup.sql |
 
 
 
