@@ -11,13 +11,26 @@ class V1::StatesController < ApplicationController
   end
 
   def create
-    @state = State.create(state_params)
-    json_response(@state)
+    @state = State.create!(state_params)
+    json_response(@state, :created)
   end
 
   def update
     @state = State.find(params[:id])
-    @state.update(state_params)
+    if @state.update!(state_params)
+      render status: 200, json: {
+        message: "This state has been updated successfully."
+      }
+    end
+  end
+
+  def search
+    if State.find_by_state_name(params[:state_name])
+      @state = State.find_by_state_name(params[:state_name])
+      json_response(@state)
+    else
+      json_response("Returned no results for '#{params[:state_name]}'")
+    end
   end
 
   def destroy

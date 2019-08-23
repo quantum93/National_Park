@@ -69,7 +69,7 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 * for faker practice, use the faker information on https://www.rubydoc.info/gems/faker/1.6.6#fakervehicle site for test.
 
 ## Spec
-| -------------------------------------------------------------: | -----------------------: | ---------------------------: |
+| :-------------------------------------------------------------: | :-----------------------: | :---------------------------: |
 | Create API Files and directories                               | rails new app_name --api -d postgresql -T               |
 | Bundling gems for this app                                     | bundle install                                          |
 | Setting up Rspec                                               | bundle exec rails generate rspec:install                |
@@ -86,15 +86,10 @@ _Please contact us if you have any issues at: taebumlee@gmail.com_
 | Scope for the highest number of park in states                 |                                                         |
 | Scope for the random state display                             |                                                         |
 | Create versioning feature for API                              |                                                         |
+| Create custom endpoint that accepts parameters (SEARCH route for state) |                                                |
+| Create exception handling for create and update of state table |                                                         |
+|
 
-Randomized data with Faker or your own custom seed code.
-Endpoints for GET (all and by id), POST, PUT and DELETE.
-A RANDOM endpoint that randomly returns a park/business/animal.
-Model scopes to process parameters from API calls.
-A second custom endpoint that accepts parameters (example: a SEARCH route that allows users to search by specific park names).
-
-At least one of the objectives from Monday's Further Exploration lesson (such as versioning).
-Thorough exception handling.
 Complete testing with request specs.
 A README that thoroughly documents all endpoints, including parameters that can be passed in.
 
